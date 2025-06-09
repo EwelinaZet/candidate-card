@@ -17,12 +17,10 @@ const candidatesList = computed<Candidate[] | []>(() => {
   if (Array.isArray(data)) {
     return data
   }
-  else if (data) {
-    return [data] // wrap a single object in an array
+  if (data) {
+    return [data]
   }
-  else {
-    return [] // no data
-  }
+  return []
 })
 </script>
 
@@ -35,7 +33,6 @@ const candidatesList = computed<Candidate[] | []>(() => {
     <div v-else-if="error">
       Coś poszło nie tak. Spróbuj ponownie.
     </div>
-
     <div
       v-else
       class="candidate-card__wrapper"

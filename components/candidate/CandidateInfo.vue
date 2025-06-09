@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, toRefs } from 'vue'
 import type { Candidate } from '../../models/index'
 
 const props = defineProps({
@@ -8,6 +8,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const { name, surname, email, phone, image } = toRefs(props.candidate)
 
 const showPhone = ref<boolean>(false)
 
@@ -18,8 +20,11 @@ const handleDownloadData = (): void => {
 
   const link = document.createElement('a')
   link.href = url
-  link.download = props.candidate.surname
+  link.download = surname.value
+
+  document.body.appendChild(link)
   link.click()
+  document.body.removeChild(link)
 
   URL.revokeObjectURL(url)
 }
@@ -30,25 +35,25 @@ const handleDownloadData = (): void => {
     <div class="candidate-info__img">
       <img
         src="/assets/avatar.png"
-        :alt="candidate.image?.filename"
+        :alt="image?.filename"
         class="avatar"
       >
     </div>
     <div class="candidate-info__wrapper">
       <div class="candidate-info__data">
-        <span class="candidate-info__data--name">{{ candidate.name }} {{ candidate.surname }}</span>
+        <span class="candidate-info__data--name">{{ name }} {{ surname }}</span>
         <span class="candidate-info__data--email">
           Email:
           <a
-            :href="`mailto:${candidate.email}`"
+            :href="`mailto:${email}`"
             class="link"
           >
-            {{ candidate.email }}
+            {{ email }}
           </a>
         </span>
         <span class="candidate-info__data--phone">
           Number :
-          {{ showPhone ? candidate.phone : `XXXXXX${candidate.phone.toString().slice(-3)}` }}
+          {{ showPhone ? phone : `XXXXXX${phone.toString().slice(-3)}` }}
           <span
             class="blue-button"
             @click="showPhone = !showPhone"

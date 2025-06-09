@@ -11,7 +11,7 @@ const props = defineProps({
 const showFullDescription = ref<boolean>(false)
 
 const firstParagraph = computed<string>(() => {
-  return props.description.split('\n\n')[0]
+  return props.description?.split('\n\n')[0]
 })
 </script>
 

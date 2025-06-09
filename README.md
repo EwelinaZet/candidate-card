@@ -1,75 +1,21 @@
-# Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Candidate Card
 
-## Setup
+Candidate Card application is used to download candidate data and display it in a clear form. It allows you to easily browse the list of candidates, along with their basic information. This project uses the API source https://webwizards.home.pl/jacek/frontend-task/api/user/ to get the required data.
 
-Make sure to install dependencies:
+
+## Project Setup
 
 ```bash
-# npm
+
+# Use Node.js version 20 or above
+
+# Install project dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Compile and Hot-reload for Development
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# Type-Check, Compile and Minify for Production
+npm run build 
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
