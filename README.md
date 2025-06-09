@@ -3,7 +3,7 @@ Candidate Card
 
 Candidate Card application is used to fetch candidate data and display it in a clear form. It allows you to easily browse the list of candidates, along with their basic information. This project uses the API source https://webwizards.home.pl/jacek/frontend-task/api/user/ to get the required data.
 
-![image alt](assets/img/avatar.png)
+![image alt](assets/img/app-view.png)
 
 
 ## Netlify link
