@@ -34,7 +34,7 @@ const handleDownloadData = (): void => {
   <div class="candidate-info">
     <div class="candidate-info__img">
       <img
-        src="/assets/avatar.png"
+        src="/assets/img/avatar.png"
         :alt="image?.filename"
         class="avatar"
       >
